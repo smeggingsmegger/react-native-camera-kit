@@ -32,9 +32,11 @@ class RNCameraKitModule(private val reactContext: ReactApplicationContext) : Rea
         // CameraManager does not allow us to return values
         val context = reactContext
         val uiManager = context.getNativeModule(UIManagerModule::class.java)
-        context.runOnUiQueueThread {
-            val view = uiManager.resolveView(viewTag) as CKCamera
-            view.capture(options.toHashMap(), promise)
+        if (uiManager != null) {
+            context.runOnUiQueueThread {
+                val view = uiManager.resolveView(viewTag) as CKCamera
+                view.capture(options.toHashMap(), promise)
+            }
         }
     }
 }
