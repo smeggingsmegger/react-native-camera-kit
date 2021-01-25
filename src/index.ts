@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NativeModules } from 'react-native';
 
 import Camera from './Camera';
