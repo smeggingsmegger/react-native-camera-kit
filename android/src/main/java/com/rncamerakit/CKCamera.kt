@@ -280,6 +280,10 @@ class CKCamera(context: ThemedReactContext) : FrameLayout(context), LifecycleObs
     }
 
     fun capture(options: Map<String, Any>, promise: Promise) {
+        if (options.get("flashMode")) {
+            setFlashMode(options["flashMode"] as String)
+        }
+
         // Create output options object which contains file + metadata
         val contentValues = ContentValues().apply {
             put(MediaStore.MediaColumns.DISPLAY_NAME, "IMG_" + System.currentTimeMillis())
