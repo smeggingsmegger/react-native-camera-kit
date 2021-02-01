@@ -25,13 +25,16 @@ function Camera(props, ref) {
   _.update(transformedProps, 'laserColor', (c) => processColor(c));
   _.update(transformedProps, 'surfaceColor', (c) => processColor(c));
 
-  return (
-    <NativeCamera
-      style={{ minWidth: 100, minHeight: 100 }}
-      flashMode={props.flashMode}
-      ref={nativeRef}
-      {...transformedProps}
-    />);
+
+  // return (
+  //   <NativeCamera
+  //     style={{ minWidth: 100, minHeight: 100 }}
+  //     flashMode={props.flashMode}
+  //     ref={nativeRef}
+  //     {...transformedProps}
+  //   />);
+  return <NativeCamera ref={nativeRef} {...transformedProps} />;
+
 }
 
 const { PORTRAIT, PORTRAIT_UPSIDE_DOWN, LANDSCAPE_LEFT, LANDSCAPE_RIGHT } = RNCameraKitModule.getConstants();
