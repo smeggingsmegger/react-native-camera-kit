@@ -280,7 +280,7 @@ class CKCamera(context: ThemedReactContext) : FrameLayout(context), LifecycleObs
     }
 
     fun capture(options: Map<String, Any>, promise: Promise) {
-        if (options.get("flashMode")) {
+        if (options.containsKey("flashMode")) {
             setFlashMode(options["flashMode"] as String)
         }
 
