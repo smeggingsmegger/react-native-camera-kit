@@ -300,7 +300,7 @@ class CKCamera(context: ThemedReactContext) : FrameLayout(context), LifecycleObs
                     )
                     .build()
             else -> ImageCapture.OutputFileOptions
-                    .Builder(file)
+                    .Builder(File(outputPath))
                     .build()
         }
 
